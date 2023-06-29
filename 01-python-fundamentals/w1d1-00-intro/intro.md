@@ -11,10 +11,3 @@ Python is a popular programming language. It was created by Guido van Rossum, an
 3. Scientific Computing: Python is widely used in scientific computing due to its extensive libraries and tools. It is employed in fields such as physics, chemistry, biology, and astronomy for simulations, numerical analysis, data visualization, and more.
 4. Artificial Intelligence and Natural Language Processing: Python is extensively used in AI and NLP applications. Libraries like TensorFlow, PyTorch, and NLTK provide a rich ecosystem for deep learning, neural networks, and processing natural language.
 5. Automation and Scripting: Python's simplicity and ease of use make it an ideal choice for automation and scripting tasks. It is used for tasks like file operations, system administration, network automation, and building scripts to simplify repetitive processes.
-
-## Why Python?
-- Python is cross-platform (Windows, Mac, Linux, Raspberry Pi, etc).
-- Python has a simple syntax similar to the English language.
-- Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
-- Python is an interpreted language, code can be executed as soon as it is written. This means that prototyping can be very quick.
-- Python is a multi-paradigm language. It supports object-oriented programming (OOP), procedural programming, and functional programming. It allows developers to choose the programming style that best fits their needs and preferences.
