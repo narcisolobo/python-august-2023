@@ -6,7 +6,7 @@ The `for` loop is used when you have a specific number of iterations or when you
 
 ```py
 for item in sequence:
-# Code block to be executed
+    # Code block to be executed
 ```
 In each iteration, the loop variable `item` takes the value of the next item in the sequence. The code block indented under the `for` loop is executed repeatedly for each item in the sequence until the end is reached.
 
