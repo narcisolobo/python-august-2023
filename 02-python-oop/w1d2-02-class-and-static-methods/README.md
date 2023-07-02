@@ -5,27 +5,20 @@ Let's revisit our `Guitar` class and add class and static methods.
 class Guitar:
     num_guitars_in_stock = 0  # Class attribute
 
-    def __init__(self, brand, model, num_strings):
+    def __init__(self, brand, model, num_strings = 6):
         self.brand = brand
         self.model = model
         self.num_strings = num_strings
         self.is_playing = False
         Guitar.num_guitars_in_stock += 1
 
-    def play(self):
+    def start_playing(self):
         self.is_playing = True
         print(f"The {self.brand} {self.model} is now being played.")
 
     def stop_playing(self):
         self.is_playing = False
         print(f"The {self.brand} {self.model} has stopped playing.")
-
-    def tune(self):
-        print(f"Tuning the {self.brand} {self.model}.")
-
-    def change_strings(self, new_num_strings):
-        self.num_strings = new_num_strings
-        print(f"The {self.brand} {self.model} now has {self.num_strings} strings.")
 
     @classmethod
     def display_stock(cls):

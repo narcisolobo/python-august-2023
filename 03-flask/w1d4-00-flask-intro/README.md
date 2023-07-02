@@ -1,3 +1,5 @@
+![flask-logo](images/flask-horizontal.webp)
+
 # What is Flask?
 
 Flask is a popular web application framework for Python.
