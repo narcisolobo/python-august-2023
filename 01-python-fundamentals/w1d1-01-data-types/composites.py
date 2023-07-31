@@ -19,31 +19,33 @@ colors = ["rebeccapurple", "cornflowerblue", "goldenrod", "firebrick", "darkorch
 Lists have indices just like arrays have indices in
 JavaScript. They are also zero-indexed as well.
 """
-print(colors[1])  # cornflowerblue
+
+print(colors[1])
+colors[1] = "kellygreen"
+print(colors)
 
 # List negative indices
 """
 Python supports negative indices. A -1 index will refer
 to the last element in a list.
 """
-print(colors[-1])  # darkorchid
-print(colors[-2])  # firebrick
+
+print(colors[-2])
 
 # Common list methods
 """
 There are many useful methods we can use with lists.
 """
 
-nums = [5, 8, 2, 9, 11, 3]
-words = ["pig", "dog", "zebra", "cat"]
-
 # length
 """
 Pass a list to the len() method to return the number of
 elements in the list.
 """
-print(len(nums))  # 6
-print(len(words))  # 4
+print(len(colors))
+
+for i in range(len(colors)):
+    print(colors[i])
 
 # append, remove, pop
 """
@@ -51,26 +53,34 @@ append() - adds an element to the end of a list.
 remove() - removes the specified element from a list.
 pop() - removes the element at the specified position
 """
-nums.append(1)
-print(nums)  # [5, 8, 2, 9, 11, 3, 1]
 
-words.remove("dog")
-print(words)  #  ['pig', 'zebra', 'cat']
+colors.append("hotpink")
+print(colors)
+
+colors.remove("goldenrod")
+print(colors)
+
+colors.pop(1)
+print(colors)
 
 # sort, reverse
 """
 The sort() method sorts a list in ascending order in-place.
 The reverse() method reverses a list.
 """
-nums.sort()
-print(nums)  # [1, 2, 3, 5, 8, 9, 11]
-nums.reverse()
-print(nums)  # [11, 9, 8, 5, 3, 2, 1]
 
+nums = [5, 8, 2, 9, 11, 3]
+words = ["pig", "dog", "zebra", "cat", "bunny"]
+
+nums.sort()
+print(nums)
 words.sort()
-print(words)  # ['cat', 'pig', 'zebra']
+print(words)
+
+nums.reverse()
+print(nums)
 words.reverse()
-print(words)  # ['zebra', 'pig', 'cat']
+print(words)
 
 # Explore more list methods!
 # https://www.w3schools.com/python/python_ref_list.asp
@@ -98,22 +108,27 @@ strat = {
 We can access values in a dictionary by their
 key names. Use bracket notation with quotes.
 """
-print(strat["year"])  # 1977
+
+print(strat["year"])
+strat["year"] = 1983
+print(strat["year"])
 
 # Accessing values with the get() method
 """
 We can access values in a dictionary with the get()
 method. Pass the key name in the method call in quotes.
 """
-print(strat.get("is_new"))  # False
+
+print(strat.get("model"))
 
 """
 What's the difference between bracket notation and .get()?
 With .get(), our application doesn't break if we specify
 a key name that doesn't exist.
 """
-# print(strat["non_existent_key"])  # KeyError: 'non_existent_key'
-print(strat.get("non_existent_key"))  # None
+
+# print(strat["owner"])
+print(strat.get("owner"))
 
 # Dictionary methods
 """
@@ -126,21 +141,21 @@ There are many useful methods we can use with lists.
 .values() - returns an array of the dictionary's values.
 .items() - returns an array of tuples of the dictionary's key-value pairs.
 """
-print(strat.keys())  # dict_keys(['brand', 'model', 'year', 'color', 'is_new'])
-print(strat.values())  # dict_values(['Fender', 'Stratocaster', 1977, 'blue', False])
+
+print(strat.keys())
+print(strat.values())
 print(strat.items())
-# dict_items([('brand', 'Fender'), ('model', 'Stratocaster'), ('year', 1977), ('color', 'blue'), ('is_new', False)])
 
 # in, not in
 """
 We can use the 'in' and 'not in' keywords to check if a key
 name exists in a dictionary.
 """
-if "color" in strat:
-    print("color exists in strat")
 
-if "banana" not in strat:
-    print("banana not in strat")
+if "owner" in strat:
+    print("owner in strat")
+else:
+    print("owner not in strat")
 
 # Explore more dictionary methods!
 # https://www.w3schools.com/python/python_ref_dictionary.asp
