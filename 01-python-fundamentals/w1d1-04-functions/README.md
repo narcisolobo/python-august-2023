@@ -11,7 +11,7 @@ def function_name(parameter1, parameter2, ...):
     # Optionally, return a value
 ```
 ## Function Call:
-To use a function and execute its code, you call the function by its name followed by parentheses `()`. If the function accepts parameters, you can pass the corresponding values inside the parentheses. Here's the general syntax:
+To use a function and execute its code, you call the function by its name followed by parentheses `()`. If the function accepts parameters, you can pass the corresponding arguments inside the parentheses. Here's the general syntax:
 
 ```py
 function_name(argument1, argument2, ...)

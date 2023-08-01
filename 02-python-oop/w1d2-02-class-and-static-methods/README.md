@@ -25,8 +25,8 @@ class Guitar:
         print(f"Number of guitars in stock: {cls.num_guitars_in_stock}")
 
     @staticmethod
-    def get_full_name(guitar):
-        print(guitar.brand, guitar.model)
+    def standard_tuning():
+        print("E, A, D, G, B, E")
 
 
 # Create instances of the Guitar class
@@ -37,6 +37,6 @@ guitar2 = Guitar("Gibson", "Les Paul", 6)
 print(Guitar.num_guitars_in_stock)    # Output: 2
 Guitar.display_stock()                # Output: Number of guitars in stock: 2
 
-# Output: Fender Stratocaster
-Guitar.get_full_name(guitar1)
+# Output: E, A, D, G, B, E
+Guitar.standard_tuning()
 ```
