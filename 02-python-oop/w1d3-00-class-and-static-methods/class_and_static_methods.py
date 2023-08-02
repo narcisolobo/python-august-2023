@@ -1,45 +1,43 @@
-class Guitar:
-    """The Guitar class."""
+"""
+CLASS METHODS AND STATIC METHODS
+"""
 
-    def __init__(self, brand, model, num_strings=6):
-        """Creates an instance of the Guitar class."""
 
-        self.brand = brand
-        self.model = model
-        self.num_strings = num_strings
-        self.is_playing = False
+"""
+Instance Attributes and Instance Methods
 
-    def __str__(self):
-        """A human-readable representation of the instance."""
+Up to now we've been creating instance attributes and instance
+methods.
 
-        return f"<Guitar: {self.brand} {self.model}>"
+Instance attributes are unique to each instance of a class and
+are defined in the __init__ constructor method.
 
-    def play(self):
-        """
-        Changes the instance's `is_playing` attribute to True
-        and prints a informative string.
-        """
+Instance methods are methods that belong to an object
+of the class, rather than the class itself.
+"""
 
-        self.is_playing = True
-        print(f"The {self.brand} {self.model} is being played.")
-        return self
 
-    def stop_playing(self):
-        """
-        Changes the instance's `is_playing` attribute to False
-        and prints a informative string.
-        """
+"""
+Class Attributes and Class Methods
 
-        self.is_playing = False
-        print(f"The {self.brand} {self.model} has stopped playing.")
-        return self
+Class Attributes are shared among all instances of the class
+and are defined outside of any method in the class definition.
 
-    def change_strings(self, new_num_strings):
-        """
-        Changes the instance's `num_strings` attribute to the
-        given new number of strings.
-        """
+These class attributes are also known as static class attributes
+or static class variables.
+"""
 
-        self.num_strings = new_num_strings
-        print(f"Changed to {self.num_strings} strings.")
-        return self.num_strings
+
+"""
+Static Methods
+Static methods are similar to class methods, the difference being
+that a static method is bound only to the class, while a class
+method is bound to the class and shared amongst all instances of
+that class.
+
+This means that a static method can be called without
+an object for that class.
+
+This also means that static methods cannot modify the state of an
+object as they are not bound to it.
+"""
