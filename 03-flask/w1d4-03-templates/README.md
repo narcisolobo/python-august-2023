@@ -41,5 +41,3 @@ Use single curly braces and percent signs `{% for item in items %}...{% endfor %
     <p>Out of stock</p>
 {% endif %}
 ```
-
-## Passing data from view to function

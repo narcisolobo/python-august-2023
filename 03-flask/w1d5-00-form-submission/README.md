@@ -53,6 +53,10 @@ entered_first_name = request.form["first_name"]
 # THIS KEY NAME MUST MATCH EXACTLY
 # WITH THE NAME ATTRIBUTE OF THE INPUT
 ```
+Or with the built-in `.get` dictionary method:
+```py
+entered_first_name = request.form.get("first_name")
+``````
 
 ### Other input types
 #### `number` inputs:
@@ -72,6 +76,8 @@ And the user enters a value of "25" for the age, we can convert it to an integer
 
 ```py
 age = int(request.form["age"])
+# or
+age = int(request.form.get("age"))
 ```
 
 #### `checkbox` inputs:
@@ -158,6 +164,8 @@ When the form is submitted, the selected pizza option will be sent to the server
 
 ```py
 selected_pizza = request.form["pizza"]
+# or
+selected_pizza = request.form.get("pizza")
 ```
 The `selected_pizza` variable will contain the value of the selected pizza option, such as "hawaiian", "margherita", or "pepperoni", depending on the user's selection.
 
@@ -179,7 +187,9 @@ In this example, we have a `<select>` element with an `id` of "tee-shirt-size" a
 When the form is submitted, the selected tee-shirt size will be sent to the server as the value in the `request.form` dictionary. You can access this value using the name of the select element:
 
 ```py
-selected_size = request.form["size"]
+selected_size = request.form["shirt_size"]
+# or
+selected_size = request.form.get("shirt_size")
 ```
 
 The `selected_size` variable will contain the value of the selected tee-shirt size, such as "small", "medium", or "large", depending on the user's selection.
@@ -203,6 +213,8 @@ def create_pizza_order():
 
   # or individual values like so:
   print(request.form["pizza"])
+  # or using .get()
+  print(request.form.get("pizza"))
 
   return redirect("/success")
 ```
