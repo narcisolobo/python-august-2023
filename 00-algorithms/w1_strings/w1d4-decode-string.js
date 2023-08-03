@@ -2,11 +2,11 @@
   String Decode  
 */
 
-const str1 = "a3b2c1d3";
-const expected1 = "aaabbcddd";
+const str1 = 'a3b2c1d3';
+const expected1 = 'aaabbcddd';
 
-const str2 = "a3b2c12d10";
-const expected2 = "aaabbccccccccccccdddddddddd";
+const str2 = 'a3b2c12d10';
+const expected2 = 'aaabbccccccccccccdddddddddd';
 
 /**
  * Decodes the given string by duplicating each character by the following int
@@ -18,3 +18,6 @@ const expected2 = "aaabbccccccccccccdddddddddd";
  * @returns {string} The given str decoded / expanded.
  */
 function decodeStr(str) {}
+
+result1 = decodeStr(str1);
+console.log(result1);

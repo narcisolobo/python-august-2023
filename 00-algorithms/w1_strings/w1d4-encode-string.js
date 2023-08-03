@@ -14,6 +14,12 @@
 
 const str1 = 'aaaabbcddd';
 const expected1 = 'a4b2c1d3';
+const freqTable = {
+  a: 4,
+  b: 2,
+  c: 1,
+  d: 3,
+};
 
 const str2 = '';
 const expected2 = '';
@@ -34,5 +40,35 @@ const expected4 = 'bbcc';
  * @returns {string} The given string encoded.
  */
 function encodeStr(str) {
-  // Your code here
+  let output = '';
+
+  if (str.trim().length === 0) {
+    return output;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    let charCount = 1;
+
+    while (str[i + 1] === char) {
+      charCount++;
+      i++;
+    }
+
+    output += char + charCount;
+  }
+
+  return output.length < str.length ? output : str;
 }
+
+const result1 = encodeStr(str1);
+console.log(result1);
+
+const result2 = encodeStr(str2);
+console.log(result2);
+
+const result3 = encodeStr(str3);
+console.log(result3);
+
+const result4 = encodeStr(str4);
+console.log(result4);
