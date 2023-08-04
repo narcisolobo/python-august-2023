@@ -1,3 +1,5 @@
+const { isPalindrome } = require('./w1d5-is-palindrome');
+
 /* 
   Longest Palindromic Substring
 
@@ -13,8 +15,6 @@
   If there is more than one palindromic substring of the same longest length,
   return the first palindromic substring.
 */
-
-const { isPalindrome } = require('./w1d5-is-palindrome');
 
 const str1 = 'what up, daddy-o?';
 const expected1 = 'dad';
@@ -39,5 +39,36 @@ const expected5 = '567765';
  * @returns {string} The longest palindromic substring from the given string.
  */
 function longestPalindromicSubstring(str) {
-  
+  let longestSubStr = '';
+
+  for (let i = 0; i < str.length; i++) {
+    let subStr = '';
+
+    for (let j = i; j < str.length; j++) {
+      subStr += str[j];
+
+      if (isPalindrome(subStr)) {
+        if (subStr.length > longestSubStr.length) {
+          longestSubStr = subStr;
+        }
+      }
+    }
+  }
+
+  return longestSubStr;
 }
+
+const result1 = longestPalindromicSubstring(str1);
+console.log(result1);
+
+const result2 = longestPalindromicSubstring(str2);
+console.log(result2);
+
+const result3 = longestPalindromicSubstring(str3);
+console.log(result3);
+
+const result4 = longestPalindromicSubstring(str4);
+console.log(result4);
+
+const result5 = longestPalindromicSubstring(str5);
+console.log(result5);
