@@ -4,7 +4,7 @@ Templates and Jinja are essential components of Flask. They allow you to build d
 
 ## Templates:
 Templates in Flask are HTML files with placeholders that can be dynamically filled with data. They provide a way to structure and define the visual elements of your web pages, such as headers, footers, and content sections. Flask uses a template engine called Jinja2 to render templates.
-Key points to cover:
+Key points:
 
 - Templates separate presentation from application logic.
 - Templates are reusable and flexible. They help us build dynamic web pages.
