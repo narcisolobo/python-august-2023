@@ -25,9 +25,35 @@ const expected4 = 'GIT';
  * Turns the given str into an acronym.
  * - Time: O(?).
  * - Space: O(?).
- * @param {string} wordsStr A string to be turned into an acronym.
- * @returns {string} The acronym.
+ * @param {String} str A string to be turned into an acronym.
+ * @returns {String} The acronym.
  */
 function acronymize(str) {
-  // Your code here
+  str = str.trim();
+  let acronym = '';
+
+  for (let char = 0; char < str.length; char++) {
+    let acronym = '';
+    const wordsArr = str.split(' ');
+
+    for (const word of wordsArr) {
+      if (word !== '') {
+        acronym += word[0].toUpperCase();
+      }
+    }
+    return acronym;
+  }
+  return acronym;
 }
+
+const result1 = acronymize(str1);
+console.log(result1);
+
+const result2 = acronymize(str2);
+console.log(result2);
+
+const result3 = acronymize(str3);
+console.log(result3);
+
+const result4 = acronymize(str4);
+console.log(result4);

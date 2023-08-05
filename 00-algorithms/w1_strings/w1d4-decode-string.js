@@ -17,7 +17,30 @@ const expected2 = 'aaabbccccccccccccdddddddddd';
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
-function decodeStr(str) {}
+function decodeStr(str) {
+  let decoded = '';
+  let currentChar = '';
 
-result1 = decodeStr(str1);
+  for (let char = 0; char < str.length; char++) {
+    let digits = '';
+
+    if (isNaN(str[char])) {
+      currentChar = str[char];
+      char++;
+
+      while (!isNaN(str[char])) {
+        digits += str[char];
+        char++;
+      }
+    }
+    for (let i = 1; i <= parseInt(digits); i++) {
+      decoded += currentChar;
+    }
+
+    char--;
+  }
+  return decoded;
+}
+
+result1 = decodeStr(str2);
 console.log(result1);
