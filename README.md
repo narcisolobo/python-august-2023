@@ -20,3 +20,6 @@ This is the class repo for Narciso Lobo's Python stack, August 2023.
    4. [Templating and Jinja](./03-flask/w1d4-03-templates/)
    5. [Form Submission](./03-flask/w1d5-00-form-submission/)
    6. [Session](./03-flask/w1d5-01-session/)
+4. MySQL
+   1. [Intro to MySQL](./04-mysql/w2d1-00-db-intro/)
+   2. [ERDs](./04-mysql/w2d1-01-erds/)
