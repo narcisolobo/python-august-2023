@@ -6,6 +6,8 @@ belongs to a pair (the int is duplicated once)
 return the only int that has no matching pair.
 */
 
+const makeFrequencyTable = require('./w2d1-make-frequency-table');
+
 const nums1 = [1];
 const expected1 = 1;
 
@@ -26,9 +28,18 @@ const expected4 = 1;
  * @param {Number[]} nums
  * @returns {Number}
  */
-function oddOccurrencesInArray(nums) {}
+function oddOccurrencesInArray(nums) {
+  const freqTable = makeFrequencyTable(nums);
 
-console.log(oddOccurrencesInArray(nums1), "should equal", expected1);
-console.log(oddOccurrencesInArray(nums2), "should equal", expected2);
-console.log(oddOccurrencesInArray(nums3), "should equal", expected3);
-console.log(oddOccurrencesInArray(nums4), "should equal", expected4);
+  for (const key in freqTable) {
+    if (freqTable[key] % 2 !== 0) {
+      return key;
+    }
+  }
+  return false;
+}
+
+console.log(oddOccurrencesInArray(nums1), 'should equal', expected1);
+console.log(oddOccurrencesInArray(nums2), 'should equal', expected2);
+console.log(oddOccurrencesInArray(nums3), 'should equal', expected3);
+console.log(oddOccurrencesInArray(nums4), 'should equal', expected4);
