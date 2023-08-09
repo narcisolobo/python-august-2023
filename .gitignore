@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 .vscode
 .DS_Store
+
+05-flask-mysql/w2d3-00-crud-code-flow/README.md
