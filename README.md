@@ -23,3 +23,5 @@ This is the class repo for Narciso Lobo's Python stack, August 2023.
 4. MySQL
    1. [Intro to MySQL](./04-mysql/w2d1-00-db-intro/)
    2. [ERDs](./04-mysql/w2d1-01-erds/)
+   3. [SQL Queries](./04-mysql/w2d2-00-sql-queries/)
+   4. [Join Statements](./04-mysql/w2d2-01-joins/)
