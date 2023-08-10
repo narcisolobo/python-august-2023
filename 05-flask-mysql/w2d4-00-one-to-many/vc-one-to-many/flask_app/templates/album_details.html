@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Countdown</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  {% include "navbar.html" %}
+
+  <div class="container">
+    <h1>Vinyl Countdown</h1>
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="card-title">{{ album.title }}</h3>
+        <p>
+          <strong>Artist:</strong>
+          {{ album.artist }}
+        </p>
+        <p>
+          <strong>Genre:</strong>
+          {{ album.genre }}
+        </p>
+        <p>
+          {# truthy and falsey #}
+          {{ 'You own this album.' if album.is_owned == True else 'You do not own this album.' }}
+        </p>
+        <p>
+          {% for song in album.songs %}
+            {{ song.title }}{{ ", " if not loop.last else '' }}
+          {% endfor %}
+        </p>
+      </div>
+      <div class="card-footer text-end">
+        <a class="btn btn-primary" href="/albums/{{ album.id }}/songs/new">Add Song</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -6,22 +6,22 @@
   integer amount.
 */
 
-const str = "Hello World";
+const str = 'Hello World';
 
 const rotateAmnt1 = 0;
-const expected1 = "Hello World";
+const expected1 = 'Hello World';
 
 const rotateAmnt2 = 1;
-const expected2 = "dHello Worl";
+const expected2 = 'dHello Worl';
 
 const rotateAmnt3 = 2;
-const expected3 = "ldHello Wor";
+const expected3 = 'ldHello Wor';
 
 const rotateAmnt4 = 4;
-const expected4 = "orldHello W";
+const expected4 = 'orldHello W';
 
 const rotateAmnt5 = 13;
-const expected5 = "ldHello Wor";
+const expected5 = 'ldHello Wor';
 /* 
 Explanation: this is 2 more than the length so it ends up being the same
 as rotating it 2 characters because after rotating every letter it gets back
@@ -38,4 +38,26 @@ to the original position.
  *    right.
  * @returns {string} The string rotated by the given amount.
  */
-function rotateStr(str, amnt) {}
+function rotateStr(str, amnt) {
+  if (!amnt || amnt <= 0) {
+    return str;
+  }
+
+  let charsToRotate = '';
+  let rotatedStr = '';
+
+  for (let i = str.length - amnt; i < str.length; i++) {
+    charsToRotate += str[i];
+  }
+
+  for (let i = 0; i < str.length - amnt; i++) {
+    rotatedStr += str[i];
+  }
+  return charsToRotate + rotatedStr;
+}
+
+console.log(rotateStr(str, rotateAmnt1), 'should equal', expected1);
+console.log(rotateStr(str, rotateAmnt2), 'should equal', expected2);
+console.log(rotateStr(str, rotateAmnt3), 'should equal', expected3);
+console.log(rotateStr(str, rotateAmnt4), 'should equal', expected4);
+console.log(rotateStr(str, rotateAmnt5), 'should equal', expected5);
