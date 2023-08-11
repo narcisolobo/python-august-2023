@@ -27,3 +27,7 @@ This is the class repo for Narciso Lobo's Python stack, August 2023.
    4. [Join Statements](./04-mysql/w2d2-01-joins/)
 5. Flask + MySQL
    1. [Full Stack CRUD](./05-flask-mysql/first-full-stack/)
+   2. [One-to-Many Modularized](./05-flask-mysql/w2d4-00-one-to-many/vc-one-to-many/)
+   3. [Form Validation](./05-flask-mysql/w2d5-00-basic-validation/madlibs/)
+6. Belt Review
+   1. [Dad Jokes Wireframes](./06-belt-review/)
