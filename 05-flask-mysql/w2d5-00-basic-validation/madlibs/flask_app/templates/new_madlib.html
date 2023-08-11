@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <title>Madlibs</title>
+  </head>
+  <body>
+    <main
+      class="container min-vh-100 d-flex justify-content-center align-items-center">
+      <div class="w-75">
+        <h1 class="display-1">Nickelodeon Mad Libs</h1>
+        <div class="card shadow">
+          <form action="/madlibs/create" method="post">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Number:</label>
+                    <input
+                      type="number"
+                      name="number"
+                      id="number"
+                      class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="noun" class="form-label">Noun:</label>
+                    <input
+                      type="text"
+                      name="noun"
+                      id="noun"
+                      class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="verb" class="form-label">Verb:</label>
+                    <input
+                      type="text"
+                      name="verb"
+                      id="verb"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="adjective" class="form-label">Adjective:</label>
+                    <input
+                      type="text"
+                      name="adjective"
+                      id="adjective"
+                      class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="first_name" class="form-label">First name:</label>
+                    <input
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-lg btn-primary w-100 text-uppercase">
+                Submit Answers
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
