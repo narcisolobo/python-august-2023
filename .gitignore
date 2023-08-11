@@ -162,3 +162,4 @@ cython_debug/
 .DS_Store
 
 05-flask-mysql/w2d3-00-crud-code-flow/README.md
+w2d5-01-login-reg

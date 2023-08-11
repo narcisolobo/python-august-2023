@@ -2,7 +2,7 @@ from random import randint
 
 from flask import redirect, render_template, request
 
-from flask_app import app
+from flask_app import app, flash
 from flask_app.models.madlib import Madlib
 
 
@@ -24,7 +24,12 @@ def new_madlib():
 def create_madlib():
     """Processes the new Madlib form."""
 
+    if not Madlib.form_is_valid(request.form):
+        return redirect("/madlibs/new")
+
     madlib_id = Madlib.create(request.form)
+
+    flash("Here's your Nickelodeon Madlib!")
 
     return redirect(f"/madlibs/{madlib_id}")
 

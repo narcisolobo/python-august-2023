@@ -4,8 +4,8 @@
   do not remove any other spaces.
 */
 
-const str1 = "   hello world     ";
-const expected1 = "hello world";
+const str1 = '   hello world     ';
+const expected1 = 'hello world';
 
 /**
  * Trims any leading or trailing white space from the given str.
@@ -15,4 +15,19 @@ const expected1 = "hello world";
  * @returns {string} The given string with any leading or trailing white space
  *    stripped.
  */
-function trim(str) {}
+function trim(str) {
+  let start = 0;
+  let end = str.length - 1;
+
+  while (str[start] == false) {
+    start++;
+  }
+
+  while (str[end] == false) {
+    end--;
+  }
+
+  return str.slice(start, end + 1);
+}
+
+console.log(trim(str1), 'should equal', expected1);
