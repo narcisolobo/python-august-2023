@@ -10,9 +10,9 @@ Screen shot of typical directory structure:
 
 ## Preparation Checklist
 - [ ] Working Login/Registration
-- [ ] Boilerplate Model Class (gizmo.py)
-- [ ] Boilerplate Controller (gizmos.py)
-- [ ] Boilerplate HTML Template(s)
+- [ ] Boilerplate model class for the child table (gizmo.py)
+- [ ] Boilerplate controller for the child table (gizmos.py)
+- [ ] Boilerplate HTML template(s)
 
 ## Code Flow
 
