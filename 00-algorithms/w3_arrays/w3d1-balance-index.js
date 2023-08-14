@@ -24,4 +24,30 @@ const expected2 = -1;
  * @param {Array<number>} nums
  * @returns {number} The balance index or -1 if there is none.
  */
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  if (nums.length < 3) {
+    return -1;
+  }
+
+  for (let i = 1; i < nums.length - 1; i++) {
+    let sumLeft = 0;
+    let sumRight = 0;
+
+    for (let leftIdx = i - 1; leftIdx >= 0; leftIdx--) {
+      sumLeft += nums[leftIdx];
+    }
+
+    for (let rightIdx = i + 1; rightIdx < nums.length; rightIdx++) {
+      sumRight += nums[rightIdx];
+    }
+
+    if (sumLeft === sumRight) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+console.log(balanceIndex(nums1), 'should equal', expected1);
+console.log(balanceIndex(nums2), 'should equal', expected2);
