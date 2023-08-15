@@ -1,7 +1,9 @@
 # Python Belt Exam Guidelines
-I highly recommend that you prepare your exam project in advance. You should at least have a working login and registration component already tested and working.
+I highly recommend that you prepare your exam project in advance. You should at least have a working login and registration component already tested and working. Have at least one user registered in your database.
 
 A red belt will require implementation of a one-to-many relationship between users and some other table. This other table cannot be pre-coded, but it can be generated from a boilerplate model that you prep beforehand. Use the replace all feature in VS Code and remember to preserve case.
+
+Once you create the second table in your ERD, seed it with at least one or two rows.
 
 ## Project Directory Structure
 Screen shot of typical directory structure:

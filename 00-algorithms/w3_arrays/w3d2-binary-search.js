@@ -38,6 +38,9 @@ const expected4 = 4;
  * @returns {boolean} Whether the given num exists in the given array.
  */
 function binarySearch(sortedNums, searchNum) {
+  let low = 0;
+  let high = sortedNums.length - 1;
+  let mid = low + Math.floor((high - low) / 2);
   // pseudocode
   // your code here
 }
