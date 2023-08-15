@@ -39,7 +39,7 @@ Screen shot of typical directory structure:
 7. If validator returns `True`, create new row in database by calling the `create` class method (the platform calls it `save`).
 8. The `create` class method must have a SQL insert query with placeholders that match the named elements in your form
 9. `connectToMySql` function is called
-10. `query_db` is chained and called, and w pass the query and `form_data` to it
+10. `query_db` is chained and called, and we pass the query and `form_data` to it
 11. `query_db` returns the id of the row it created (this is where any SQL errors may trigger)
 12. Back in controller, we can use the id that was returned from `query_db` to redirect the user to the details route
 13. Or we can just redirect the user to the route that displays all (this is what will usually be the case)
