@@ -37,4 +37,11 @@ const expected4 = 4;
  * @param {number} searchNum
  * @returns {boolean} Whether the given num exists in the given array.
  */
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  // pseudocode
+  // your code here
+}
+
+console.log(binarySearch(nums1, searchNum1), 'should equal', expected1);
+console.log(binarySearch(nums2, searchNum2), 'should equal', expected2);
+console.log(binarySearch(nums3, searchNum3), 'should equal', expected3);
