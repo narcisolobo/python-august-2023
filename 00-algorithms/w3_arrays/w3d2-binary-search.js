@@ -29,6 +29,18 @@ const nums4 = [2, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9];
 const searchNum4 = 2;
 const expected4 = 4;
 
+function randomNumber(min = 0, max = 20) {
+  return Math.floor(Math.random() * max) + min;
+}
+
+function randomSortedArray(length = 10, min = 0, max = 20) {
+  const arr = [];
+  for (let i = 0; i < length; i++) {
+    arr.push(randomNumber(min, max));
+  }
+  return arr.sort((a, b) => a - b);
+}
+
 /**
  * Efficiently determines if the given num exists in the given array.
  * - Time: O(?).
@@ -40,11 +52,27 @@ const expected4 = 4;
 function binarySearch(sortedNums, searchNum) {
   let low = 0;
   let high = sortedNums.length - 1;
-  let mid = low + Math.floor((high - low) / 2);
-  // pseudocode
-  // your code here
+
+  while (low <= high) {
+    let mid = low + Math.floor((high - low) / 2);
+    console.log('Mid:', mid, 'Mid:', mid, 'Mid:', mid);
+
+    if (searchNum === sortedNums[mid]) {
+      return true;
+    } else if (searchNum < sortedNums[mid]) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+
+  return false;
 }
 
 console.log(binarySearch(nums1, searchNum1), 'should equal', expected1);
 console.log(binarySearch(nums2, searchNum2), 'should equal', expected2);
 console.log(binarySearch(nums3, searchNum3), 'should equal', expected3);
+
+const randArr = randomSortedArray();
+console.log(randArr);
+console.log(binarySearch(randArr, 12));
