@@ -31,3 +31,8 @@ This is the class repo for Narciso Lobo's Python stack, August 2023.
    3. [Form Validation](./05-flask-mysql/w2d5-00-basic-validation/madlibs/)
 6. Belt Review
    1. [Dad Jokes Wireframes](./06-belt-review/)
+7. APIs and AJAX
+   1. [Intro to APIs and AJAX](./07-apis-ajax/w3d4-00-apis/)
+8. Off the Grid
+   1. [Template Inheritance](./08-off-the-grid/template-inheritance/)
+   2. [The Requests Library](./08-off-the-grid/requests-library/rick-and-morty-api/)
