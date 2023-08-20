@@ -1,0 +1,83 @@
+{% extends "/shared/layout.html" %}
+
+{% block title %}- Edit Todo{% endblock title %}
+
+{% block content %}
+
+<h1 class="display-1 my-5">Edit Todo</h1>
+
+<div class="card shadow">
+  <div class="card-body">
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <form action="/todos/{{ todo.id }}/update" method="post">
+      <input type="hidden" name="todo_id", value="{{ todo.id }}">
+      <div class="mb-3">
+        <label for="task" class="form-label">Task:</label>
+        <input type="text" name="task" id="task" class="form-control" value="{{ todo.task }}" />
+        {% if messages %}
+          {% for category, message in messages %}
+            {% if category == 'task' %}
+              <span class="form-text text-warning">{{ message }}</span>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="mb-3">
+        <label for="due_at" class="form-label">Due at:</label>
+        <input
+          disabled
+          type="date"
+          name="due_at"
+          id="due_at"
+          class="form-control"
+          value="{{ todo.due_at|date_input }}" />
+        {% if messages %}
+          {% for category, message in messages %}
+            {% if category == 'due_at' %}
+              <span class="form-text text-warning">{{ message }}</span>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <label class="form-label">Have you done it?</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="is_complete"
+          id="yes"
+          value="1"
+          {{ 'checked' if todo.is_complete else '' }} />
+        <label class="form-check-label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="is_complete"
+          id="no"
+          value="0"
+          {{ 'checked' if not todo.is_complete else '' }} />
+        <label class="form-check-label" for="no">
+          No
+        </label>
+      </div>
+        {% if messages %}
+          {% for category, message in messages %}
+            {% if category == 'is_complete' %}
+              <span class="form-text text-warning">{{ message }}</span>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary">Edit Todo</button>
+      </div>
+    </form>
+    {% endwith %}
+  </div>
+</div>
+
+{% endblock content %}
