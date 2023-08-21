@@ -1,0 +1,42 @@
+{% extends "/shared/layout.html" %}
+
+{% block content %}
+
+<h1 class="display-1 my-5">Register</h1>
+
+<div class="card shadow">
+  <div class="card-body">
+    <form action="/auth/register" method="post">
+      {{ form.csrf_token }}
+      <div class="mb-3">
+        {{ form.username.label(class="form-label") }} {{
+        form.username(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.email.label(class="form-label") }} {{
+        form.email(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.password.label(class="form-label") }} {{
+        form.password(class="form-control") }} {% if form.password.errors
+        %} {% for error in form.password.errors %}
+        <span class="form-text text-danger"> {{ error }} </span>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="mb-3">
+        {{ form.confirm_password.label(class="form-label") }}
+        {{ form.confirm_password(class="form-control") }}
+        {% if form.confirm_password.errors %}
+          {% for error in form.confirm_password.errors %}
+            <span class="form-text text-danger"> {{ error }} </span>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

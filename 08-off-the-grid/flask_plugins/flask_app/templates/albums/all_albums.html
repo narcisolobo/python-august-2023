@@ -1,0 +1,26 @@
+{% extends "/shared/layout.html" %}
+
+{% block content %}
+
+<h1 class="display-1 my-5">All Albums</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title:</th>
+      <th>Artist:</th>
+      <th>Uploaded By:</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for album in albums %}
+      <tr>
+        <td>{{ album.title }}</td>
+        <td>{{ album.artist }}</td>
+        <td>{{ album.creator.username }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}
