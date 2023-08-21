@@ -29,7 +29,7 @@
 4. [Dedupe Sorted](./w3_arrays/w3d4-dedupe-sorted.js)
 
 ## Week 4 - Recursion
-1. [Recursive Sigma](./w4_recursion/w4d1-recursive-sigma.js)
+1. [Recursive Factorial](./w4_recursion/w4d1-recursive-factorial.js)
 2. [Sum Array](./w4_recursion/w4d1-sum-array.js)
 3. [Factorial](./w4_recursion/w4d2-factorial.js)
 4. [Fibonacci](./w4_recursion/w4d2-fibonacci.js)

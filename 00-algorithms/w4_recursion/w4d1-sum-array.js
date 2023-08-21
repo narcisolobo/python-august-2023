@@ -19,4 +19,6 @@ const expected3 = 0;
  * @param {Array<number>} nums
  * @returns {number} The sum of the given nums.
  */
-function sumArr(nums) {}
+function sumArr(nums) {
+  //
+}
