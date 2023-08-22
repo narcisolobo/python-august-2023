@@ -38,3 +38,4 @@ This is the class repo for Narciso Lobo's Python stack, August 2023.
    2. [The Requests Library](./08-off-the-grid/requests-library/rick-and-morty-api/)
    3. [Flask App Factory, Blueprints](./08-off-the-grid/flask_plugins/)
    4. [Flask Plugins/Extensions](./08-off-the-grid/flask_plugins/)
+   5. [Flask Image Upload](./08-off-the-grid/image-upload/)
