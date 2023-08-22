@@ -1,13 +1,14 @@
 from flask_app.models.album import Album
 from flask_app.forms.album import AlbumForm
 from flask_app.extensions import db
-from flask_login import current_user
+from flask_login import current_user, login_required
 from flask import Blueprint, redirect, render_template, request
 
 bp = Blueprint("albums", __name__, url_prefix="/albums")
 
 
 @bp.route("/create", methods=["GET", "POST"])
+@login_required
 def create_album():
     """Displays and processes the new album form."""
 
@@ -28,6 +29,7 @@ def create_album():
 
 
 @bp.get("/")
+@login_required
 def all_albums():
     """Displays all albums"""
 
