@@ -1,0 +1,11 @@
+.avatar {
+  width: 7rem;
+  background-color: white;
+  padding: .25rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pt-lg {
+  padding-top: 4rem;
+}

@@ -1,0 +1,39 @@
+{% extends "/shared/layout.html" %}
+
+{% block content %}
+
+<h1 class="display-1 my-5">My Profile</h1>
+
+<div class="row">
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-header p-5 bg-primary">
+        <img
+          class="avatar"
+          src="{{ url_for('static', filename='images/profile_pictures/' + current_user.profile_pic) }}"
+          alt="{{ current_user.username }}" />
+      </div>
+      <div class="card-body pt-lg">
+        <h2 class="display-3">{{ current_user.username }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-body">
+        <form action="/profiles/{{ current_user.id }}" method="post" enctype="multipart/form-data">
+          {{ form.csrf_token }}
+          <div class="mb-3">
+            {{ form.avatar.label(class="form-label") }}
+            {{ form.avatar(class="form-control") }}
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary">Upload Image</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
