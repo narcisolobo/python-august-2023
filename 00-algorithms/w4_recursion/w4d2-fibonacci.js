@@ -1,5 +1,5 @@
 /* 
-  Return the fibonacci number at the nth position, recursively.
+  Return the Fibonacci number at the nth position, recursively.
   
   Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
@@ -32,4 +32,17 @@ const expected6 = 21;
  * @param {number} num The position of the desired number in the fibonacci sequence.
  * @returns {number} The fibonacci number at the given position.
  */
-function fibonacci(num) {}
+function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  }
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+console.log(fibonacci(num1), 'should equal', expected1);
+console.log(fibonacci(num2), 'should equal', expected2);
+console.log(fibonacci(num3), 'should equal', expected3);
+console.log(fibonacci(num4), 'should equal', expected4);
+console.log(fibonacci(num5), 'should equal', expected5);
+console.log(fibonacci(num6), 'should equal', expected6);
