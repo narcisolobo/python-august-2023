@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <title>Dad Jokes</title>
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    <main class="container pt-5">
+
+      {# flash messages block start #}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}           
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {# flash messages block end #}
+
+      <div class="card shadow mb-3">
+        <div class="card-body">
+          <h1 class="display-1">All Dad Jokes</h1>
+          <h2 class="display-3">Welcome, {{ user.first_name }}!</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-8" id="jokes-container">
+          {% for joke in jokes %}
+            <div class="card shadow mb-3">
+              <div class="card-body">
+                <p class="display-5">{{ joke.content }}</p>
+              </div>
+              <div class="card-footer d-flex gap-2 justify-content-end">
+                <a href="/jokes/{{ joke.id }}" class="btn btn-primary">View</a>
+                <form action="/groans/create" method="post">
+                  <input type="hidden" name="user_id" value="{{ session.user_id }}" />
+                  <input type="hidden" name="joke_id" value="{{ joke.id }}" />
+                  <button type="submit" class="btn btn-primary {{ 'disabled' if joke.is_groaned_at_by(session.user_id) else '' }}">Groan</button>
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="col-4">
+          <div class="card shadow">
+            <h5 class="card-header">Add a Dad Joke</h5>
+            <div class="card-body">
+              {% include "joke_form.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <title>CHANGE ME</title>
+  </head>
+  <body>
+    {% include "dj-navbar.html" %}
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col">
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}           
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          <div class="card mb-3 shadow">
+            <div class="card-body">
+              <h1 class="display-3">Create a new gizmo!</h1>
+            </div>
+          </div>
+          <div class="card shadow mb-3">
+            <div class="card-body">
+              <form action="/gizmos/create" method="post">
+                <input type="hidden" name="user_id" value="{{ session.user_id }}">
+                <div class="mb-3">
+                  <label for="column1" class="form-label">Column1:</label>
+                  <input type="text" name="column1" id="column1" class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label for="column2" class="form-label">Column2:</label>
+                  <input type="text" name="column2" id="column2" class="form-control" />
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Add Gizmo</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

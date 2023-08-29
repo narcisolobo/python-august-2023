@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <title>Edit Joke</title>
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    <main class="container">
+      <div class="row pt-5">
+        <div class="col">
+
+          {# flash messages block start #}
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}           
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {# flash messages block end #}
+
+          <div class="card shadow mb-3">
+            <div class="card-body">
+              <h1 class="display-1">Edit a Joke</h1>
+              <h2 class="display-3">Welcome, {{ user.first_name }}!</h2>
+            </div>
+          </div>
+
+          <div class="card shadow">
+            <div class="card-body">
+              <form action="/jokes/{{ joke.id }}/update" method="post">
+                <input type="hidden" name="joke_id" value="{{ joke.id }}">
+                <div class="mb-3">
+                  <label for="setup" class="form-label">Set up:</label>
+                  <input type="text" name="setup" id="setup" class="form-control" value="{{ joke.setup }}" />
+                </div>
+                <div class="mb-3">
+                  <label for="punchline" class="form-label">Punch line:</label>
+                  <input type="text" name="punchline" id="punchline" class="form-control" value="{{ joke.punchline }}" />
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                  <button type="reset" class="btn btn-warning">Reset</button>
+                  <button type="submit" class="btn btn-primary">Edit Joke</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
